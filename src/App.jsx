@@ -30,6 +30,7 @@ import InitiativesPage from './pages/InitiativesPage'
 import ScrollToTop from './components/common/ScrollToTop'
 import ProjectReportPage from './pages/ProjectReportPage'
 import PDFViewerPage from './pages/PDFViewerPage'
+import Chatbot from "./components/common/chatbot";
 
 
 function App() {
@@ -51,9 +52,9 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/initiatives/:slug" element={<InitiativesPage />} />
-              
+
               <Route path="/documents/:id" element={<PDFViewerPage />} />
-              
+
               {/* <Route path="/project-report" element={<ProjectReportPage />} /> */}
               <Route path="/shop" element={<ShopPage />} />
               <Route path="/shop/product/:id" element={<ProductPage />} />
@@ -69,8 +70,14 @@ function App() {
 
               {/* Checkout */}
               <Route path="/checkout" element={<CheckoutPage />} />
-              <Route path="/checkout/success" element={<CheckoutSuccessPage />} />
-              <Route path="/checkout/failure" element={<CheckoutFailurePage />} />
+              <Route
+                path="/checkout/success"
+                element={<CheckoutSuccessPage />}
+              />
+              <Route
+                path="/checkout/failure"
+                element={<CheckoutFailurePage />}
+              />
 
               {/* Admin - Protected */}
               <Route
@@ -86,14 +93,17 @@ function App() {
               <Route
                 path="/manager/*"
                 element={
-                  <ProtectedRoute requiredRole={['admin', 'manager']}>
+                  <ProtectedRoute requiredRole={["admin", "manager"]}>
                     <ManagerPanel />
                   </ProtectedRoute>
                 }
               />
 
               {/* Permission Denied */}
-              <Route path="/permission-denied" element={<PermissionDeniedPage />} />
+              <Route
+                path="/permission-denied"
+                element={<PermissionDeniedPage />}
+              />
 
               {/* 404 Not Found */}
               <Route path="*" element={<NotFoundPage />} />
@@ -101,11 +111,12 @@ function App() {
           </main>
           <FloatingCartButton />
           <CartDrawer />
+          <Chatbot />
           {!shouldHideNavbarFooter && <Footer />}
         </div>
       </CartProvider>
     </AuthProvider>
-  )
+  );
 }
 
 export default App
