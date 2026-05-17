@@ -52,13 +52,13 @@ export default function AutoScrollCarousel() {
         >
           <div
             ref={scrollRef}
-            className="flex gap-6 animate-scroll overflow-x-scroll no-scrollbar scroll-smooth"
+            className="flex gap-6 animate-scroll overflow-x-scroll no-scrollbar scroll-smooth mt-2 mb-2"
           >
             {[...reliefItems, ...reliefItems].map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 flex flex-col justify-between text-center 
-                           transition duration-300 w-75 h-75 flex-shrink-0  
+                className="bg-white mt-5 mb-5 rounded-2xl shadow-lg border border-gray-200 p-4 flex flex-col justify-between text-center 
+                           transition duration-300 w-70 h-70 flex-shrink-0  
                            hover:scale-105 hover:shadow-2xl hover:brightness-105"
               >
                 <p className="text-gray-600 italic mb-4 flex-1">
